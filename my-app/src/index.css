@@ -1,0 +1,64 @@
+body {
+  margin: 0;                  /* إزالة المسافات الافتراضية حول الصفحة */
+  font-family: Arial, sans-serif;  /* اختيار خط واضح وسهل القراءة */
+  background-color: #f2f2f2;  /* لون خلفية الصفحة */
+}
+
+.cv-container {
+  width: 900px;               /* عرض السيرة الذاتية */
+  margin: 40px auto;          /* توسيطها أفقياً مع مسافة من الأعلى والأسفل */
+  display: flex;              /* لتقسيم الصفحة إلى عمودين */
+  background: white;          /* خلفية بيضاء للـ CV */
+}
+
+/* LEFT SIDE */
+.cv-left {
+  width: 35%;                 /* نسبة العمود الأيسر من العرض الكلي */
+  background-color: #fe9b72;  /* خلفية العمود الأيسر */
+  padding: 30px;              /* مسافة داخل العمود */
+  box-sizing: border-box;     /* يشمل الحشو داخل العرض */
+}
+
+.profile-img {
+  width: 250px;               /* حجم الصورة */
+  height: 250px;              /* نفس العرض */
+  border-radius: 50%;         /* هاي اللي بتخليها دائرة */
+  object-fit: cover;          /* حتى ما تنتمط الصورة */
+  display: block;             /* لتطبيق التوسيط */
+  margin: 0 auto;             /* وضع الصورة في الوسط */
+}
+
+.name {
+  text-align: center;         /* وضع الاسم في الوسط */
+  margin-bottom: 20px;        /* مسافة بين الاسم وبقية المحتوى */
+}
+
+.contact p {
+  font-size: 14px;            /* حجم خط مناسب */
+  margin: 6px 0;              /* مسافة بين كل فقرة */
+}
+
+/* RIGHT SIDE */
+.cv-right {
+  width: 65%;                 /* نسبة العمود الأيمن من العرض الكلي */
+  padding: 40px;              /* مسافة داخل العمود */
+  box-sizing: border-box;     /* يشمل الحشو داخل العرض */
+}
+
+.section {
+  margin-bottom: 30px;        /* مسافة بين كل قسم والآخر */
+}
+
+.section h3 {
+  border-bottom: 2px solid #141414;  /* خط تحت عنوان القسم */
+  padding-bottom: 5px;            /* مسافة بين العنوان والخط */
+  margin-bottom: 10px;            /* مسافة بين العنوان والمحتوى */
+}
+
+.section ul {
+  padding-left: 20px;         /* مسافة الإزاحة للنقاط */
+}
+
+.section li {
+  margin-bottom: 6px;         /* مسافة بين كل عنصر وآخر */
+}
