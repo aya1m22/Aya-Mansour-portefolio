@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './Hero.css';
+import avatar from '../assets/avatar.png';
 
 function Hero() {
   const [displayText, setDisplayText] = useState('');
@@ -79,7 +80,7 @@ function Hero() {
             delivering high-performance solutions.
           </p>
           <div className="hero-buttons">
-            <a href="/Aya_Mansour_CV.pdf" download className="btn btn-primary">
+            <a href="/Aya_Said_Mansour_CV.docx" download className="btn btn-primary">
               <i className="fas fa-download"></i>
               Download CV
             </a>
@@ -110,7 +111,7 @@ function Hero() {
         <div className="hero-visual">
           <div className="avatar-container">
             <div className="avatar-glow"></div>
-            <img src="/avatar.png" alt="Developer Avatar" className="avatar-img" />
+            <img src={avatar} alt="Developer Avatar" className="avatar-img" />
             <div className="orbit-ring">
               <div className="orbit-dot dot-1"><i className="fab fa-react"></i></div>
               <div className="orbit-dot dot-2"><i className="fab fa-node-js"></i></div>
