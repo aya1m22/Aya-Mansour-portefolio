@@ -1,0 +1,112 @@
+.contact-section {
+  padding: 100px 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.contact-card {
+  background: var(--bg-card);
+  padding: 22px 26px;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.contact-icon-box {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  background: rgba(201, 169, 110, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--primary);
+  flex-shrink: 0;
+  transition: all 0.3s;
+}
+
+.contact-card:hover .contact-icon-box {
+  background: var(--primary-gradient);
+  color: #0a0e1a;
+}
+
+.contact-icon-box.linkedin {
+  color: #5b9bd5;
+}
+
+.contact-icon-box.github {
+  color: var(--text-secondary);
+}
+
+.contact-icon-box.instagram {
+  color: #d4878f;
+}
+
+.contact-card:hover .contact-icon-box.linkedin,
+.contact-card:hover .contact-icon-box.github,
+.contact-card:hover .contact-icon-box.instagram {
+  color: #0a0e1a;
+}
+
+.contact-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-info h4 {
+  margin: 0 0 3px 0;
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.contact-info p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.contact-arrow {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+  transition: all 0.3s;
+  opacity: 0;
+  transform: translateX(-8px);
+}
+
+.contact-card:hover .contact-arrow {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--primary);
+}
+
+.location-card {
+  cursor: default;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}

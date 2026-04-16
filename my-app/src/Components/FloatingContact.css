@@ -1,0 +1,156 @@
+.floating-contact {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  gap: 10px;
+}
+
+.floating-toggle {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  border: none;
+  color: #0a0e1a;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 25px rgba(201, 169, 110, 0.25);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+.floating-toggle:hover {
+  transform: scale(1.06);
+  box-shadow: 0 10px 35px rgba(201, 169, 110, 0.35);
+}
+
+.floating-toggle i {
+  transition: transform 0.3s;
+}
+
+.floating-contact.open .floating-toggle {
+  background: var(--bg-card);
+  border: 1px solid var(--border-hover);
+  box-shadow: var(--shadow-md);
+  color: var(--primary);
+}
+
+.floating-contact.open .floating-toggle i {
+  transform: rotate(90deg);
+}
+
+/* Links container */
+.floating-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  align-items: center;
+}
+
+.floating-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  text-decoration: none;
+  opacity: 0;
+  transform: translateY(20px) scale(0.5);
+  pointer-events: none;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.floating-contact.open .floating-link {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.floating-link:hover {
+  transform: translateY(0) scale(1.1) !important;
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Tooltip */
+.link-tooltip {
+  position: absolute;
+  right: 58px;
+  background: var(--bg-card);
+  color: var(--text-main);
+  padding: 5px 13px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  letter-spacing: 0.3px;
+}
+
+.floating-link:hover .link-tooltip {
+  opacity: 1;
+  transform: translateX(-4px);
+}
+
+/* Pulse animation on the toggle when closed */
+.floating-toggle::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  opacity: 0;
+  z-index: -1;
+  animation: fabPulse 3s ease-in-out infinite;
+}
+
+.floating-contact.open .floating-toggle::before {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes fabPulse {
+  0%, 100% { opacity: 0; transform: scale(1); }
+  50% { opacity: 0.15; transform: scale(1.15); }
+}
+
+@media (max-width: 768px) {
+  .floating-contact {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .floating-toggle {
+    width: 48px;
+    height: 48px;
+    font-size: 1rem;
+  }
+
+  .floating-link {
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+
+  .link-tooltip {
+    display: none;
+  }
+}
