@@ -80,7 +80,7 @@ function Hero() {
             delivering high-performance solutions.
           </p>
           <div className="hero-buttons">
-            <a href="/Aya_Said_Mansour_CV.pdf" download className="btn btn-primary">
+            <a href="Aya_Said_Mansour_CV.docx" download className="btn btn-primary">
               <i className="fas fa-download"></i>
               Download CV
             </a>
